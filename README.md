@@ -1,2 +1,2 @@
 # CS2502-USTC-25Fall
-Homework and labs for CS2502, USTC.
+This repository contains my lab assignments for the course CS2502 at USTC.
