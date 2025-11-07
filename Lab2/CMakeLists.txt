@@ -9,4 +9,5 @@ project(
 set(CMAKE_CXX_STANDARD 17)
 
 set(INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
+
 add_subdirectory(src)

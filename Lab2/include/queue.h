@@ -12,21 +12,39 @@ class queue : public list<data_base> {
 
         bool empty() override {
             // TODO
-            return true;
+            return top_index == tail_index;
         }
         void pop() override {
             // TODO
+            if (!empty())
+            {
+                top_index++;
+                top_index %= MAX_LINK_LIST_NUM;
+            }
         }
         data_base top() override {
             // TODO
             data_base tmp;
-            return tmp;
+            if (!empty())
+            {
+                tmp = list_data[top_index % MAX_LINK_LIST_NUM];
+                return tmp;
+            }
+            return data_base();
         }
         void push(data_base push_data) override {
             // TODO
+            if (top_index % MAX_LINK_LIST_NUM != (tail_index + 1) % MAX_LINK_LIST_NUM)
+            {
+                list_data[tail_index] = push_data;
+                tail_index++;
+                tail_index %= MAX_LINK_LIST_NUM;
+            }
         }
         void clear() override {
             // TODO
+            top_index = 0;
+            tail_index = 0;
         }
     private:
         int top_index = 0;
