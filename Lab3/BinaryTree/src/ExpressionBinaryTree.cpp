@@ -18,6 +18,29 @@ string ExpressionBinaryTreeNode::getValue() {
 //    返回构建的表达式树根节点
 ExpressionBinaryTreeNode* ExpressionBinaryTreeNode::buildFromPostfix(const string& postfix) {
     // TODO
+    stack<ExpressionBinaryTreeNode*> s;
+    int len = postfix.length();
+    for (int i = 0; i < len; i++)
+    {
+        char c = postfix[i];
+        ExpressionBinaryTreeNode* node = new ExpressionBinaryTreeNode(string(1, c));
+        if (isalnum(c)) s.push(node);
+        else
+        {
+            if (!s.empty())
+            {
+                node->right = s.top();
+                s.pop();
+            }
+            if (!s.empty())
+            {
+                node->left = s.top();
+                s.pop();
+            }
+            s.push(node);
+        }
+    }
+    return s.empty() ? nullptr : s.top();
 }
 
 // 从前缀表达式构建表达式树
@@ -27,6 +50,29 @@ ExpressionBinaryTreeNode* ExpressionBinaryTreeNode::buildFromPostfix(const strin
 //    返回构建的表达式树根节点
 ExpressionBinaryTreeNode* ExpressionBinaryTreeNode::buildFromPrefix(const string& prefix) {
     // TODO
+    stack<ExpressionBinaryTreeNode*> s;
+    int len = prefix.length();
+    for (int i = len - 1; i >= 0; i--)
+    {
+        char c = prefix[i];
+        ExpressionBinaryTreeNode* node = new ExpressionBinaryTreeNode(string(1, c));
+        if (isalnum(c)) s.push(node);
+        else
+        {
+            if (!s.empty())
+            {
+                node->left = s.top();
+                s.pop();
+            }
+            if (!s.empty())
+            {
+                node->right = s.top();
+                s.pop();
+            }
+            s.push(node);
+        }
+    }
+    return s.empty() ? nullptr : s.top();
 }
 
 // 从中缀表达式构建表达式树
