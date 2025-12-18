@@ -1,3 +1,0 @@
-D:\Software\CMake\bin\cmake.exe -E rm -f CMakeFiles\3_Robot.dir/objects.a
-D:\Software\MSYS2\ucrt64\bin\ar.exe qc CMakeFiles\3_Robot.dir/objects.a @CMakeFiles\3_Robot.dir\objects1.rsp
-D:\Software\MSYS2\ucrt64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\3_Robot.dir/objects.a -Wl,--no-whole-archive -o 3_Robot.exe -Wl,--out-implib,lib3_Robot.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\3_Robot.dir\linkLibs.rsp
