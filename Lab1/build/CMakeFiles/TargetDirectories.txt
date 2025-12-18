@@ -1,3 +1,0 @@
-E:/Courses of USTC/DataStructureA/Lab1-2048/Lab1/build/CMakeFiles/2048.dir
-E:/Courses of USTC/DataStructureA/Lab1-2048/Lab1/build/CMakeFiles/edit_cache.dir
-E:/Courses of USTC/DataStructureA/Lab1-2048/Lab1/build/CMakeFiles/rebuild_cache.dir
